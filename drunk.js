@@ -13,18 +13,18 @@ elements.forEach((el) => {
 
 function animate(time) {
 
-  const bigAngle = Math.sin(time / 2000) * 30; 
-  const bigSkew = Math.cos(time / 2500) * 12;   
-  const bigScale = 1 + Math.sin(time / 3000) * 0.06; 
+  const bigAngle = Math.sin(time / 2000) * 5; 
+  const bigSkew = Math.cos(time / 2500) * 2;   
+  const bigScale = 1 + Math.sin(time / 3000) * 0.01; 
   document.body.style.transform =
     `rotate(${bigAngle}deg) skew(${bigSkew}deg, ${-bigSkew}deg) scale(${bigScale})`;
 
   elements.forEach((el, i) => {
     const phase = i * 800;
-    const angle = Math.sin((time + phase) / 500) * 40; 
-    const scale = 1 + Math.sin((time + phase) / 700) * 0.1; 
-    const skewX = Math.cos((time + phase) / 900) * 20;
-    const skewY = Math.sin((time + phase) / 1100) * 20;
+    const angle = Math.sin((time + phase) / 500) * 20; 
+    const scale = 1 + Math.sin((time + phase) / 700) * 0.02; 
+    const skewX = Math.cos((time + phase) / 900) * 5;
+    const skewY = Math.sin((time + phase) / 1100) * 5;
     el.style.transform =
       `rotate(${angle}deg) scale(${scale}) skew(${skewX}deg, ${skewY}deg)`;
   });
@@ -33,3 +33,4 @@ function animate(time) {
 }
 
 requestAnimationFrame(animate);
+
